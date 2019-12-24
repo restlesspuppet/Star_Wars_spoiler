@@ -1,9 +1,9 @@
-#############################
+###############################################################################
 # Star Wars Spoilers
 # by RestlessPuppet
 # 12/24/19
 # inspired by https://twitter.com/abt_programming/status/1207391893014925314
-#############################
+###############################################################################
 
 import pygame
 from pygame.locals import *
@@ -123,10 +123,13 @@ while running:
         pos = msg.get_rect(center=(center_x, center_y + int(txt_y) + i * 30))
         pos_list.append(pos)
         i += 1
-
+    
+    if center_y + txt_y +txt_dy + 30*(len(txt_string.split('\n'))) < 0:
+        running = False
+        
     for j in range(i):
-        screen.blit(txt_list[j], pos_list[j])
+        screen.blit(txt_list[j], pos_list[j])    
 
     pygame.display.update()
-
+    
 pygame.quit()
