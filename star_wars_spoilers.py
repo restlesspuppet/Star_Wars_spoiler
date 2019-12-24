@@ -2,8 +2,11 @@
 # Star Wars Spoilers
 # by RestlessPuppet
 # 12/24/19
+#
 # inspired by https://twitter.com/abt_programming/status/1207391893014925314
+# original source: https://xkcd.com/2243/
 ###############################################################################
+
 
 import pygame
 from pygame.locals import *
