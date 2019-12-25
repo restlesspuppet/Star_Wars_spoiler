@@ -1,17 +1,15 @@
-###############################################################################
+#############################
 # Star Wars Spoilers
 # by RestlessPuppet
 # 12/24/19
-#
 # inspired by https://twitter.com/abt_programming/status/1207391893014925314
-# original source: https://xkcd.com/2243/
-###############################################################################
-
+#############################
 
 import pygame
 from pygame.locals import *
 import random
 
+pygame.mixer.init()
 pygame.init()
 screen = pygame.display.set_mode([800, 600])
 
@@ -104,6 +102,9 @@ green = (0, 255, 0)
 txt_y = center_y + 40
 txt_dy = .3
 
+pygame.mixer.music.load('starwars.wav')
+pygame.mixer.music.play()
+
 txt_string = block1 + '\n' + block2 + '\n' + block3 + '\n' + block4
 
 running = True
@@ -126,13 +127,10 @@ while running:
         pos = msg.get_rect(center=(center_x, center_y + int(txt_y) + i * 30))
         pos_list.append(pos)
         i += 1
-    
-    if center_y + txt_y +txt_dy + 30*(len(txt_string.split('\n'))) < 0:
-        running = False
-        
+
     for j in range(i):
-        screen.blit(txt_list[j], pos_list[j])    
+        screen.blit(txt_list[j], pos_list[j])
 
     pygame.display.update()
-    
+
 pygame.quit()
