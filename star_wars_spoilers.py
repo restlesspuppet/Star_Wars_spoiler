@@ -9,7 +9,6 @@ import pygame
 from pygame.locals import *
 import random
 
-pygame.mixer.init()
 pygame.init()
 screen = pygame.display.set_mode([800, 600])
 
@@ -127,7 +126,10 @@ while running:
         pos = msg.get_rect(center=(center_x, center_y + int(txt_y) + i * 30))
         pos_list.append(pos)
         i += 1
-
+    
+    if center_y + txt_y + txt_dy + 30*(len(txt_string.split('\n'))) < 0:
+        running = False
+        
     for j in range(i):
         screen.blit(txt_list[j], pos_list[j])
 
