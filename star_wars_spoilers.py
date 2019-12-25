@@ -97,7 +97,7 @@ block3 = static_txt6 + "\n" + random.choice(f) + "\n" + static_txt7 + "\n" + ran
 block4 = static_txt8 + "\n" + random.choice(h) + " " + static_txt9 + "\n" + random.choice(i) + '\n'
 
 center_x, center_y = screen.get_rect().centerx, screen.get_rect().centery
-yellow = (155, 155, 0)
+yellow = (175, 175, 0)
 green = (0, 255, 0)
 txt_y = center_y + 40
 txt_dy = .3
